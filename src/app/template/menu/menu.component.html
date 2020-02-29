@@ -2,7 +2,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
+    <a routerLink="/" class="brand-link">
       <img src="../../../assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
       <span class="brand-text font-weight-light">CLYN</span>
@@ -13,10 +13,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="../../../assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../../../assets/dist/img/cissesaloum.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Moussa Diouf</a>
+          <a href="#" class="d-block">Saloum Cisse</a>
         </div>
       </div>
 
@@ -25,110 +25,114 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item">
-                <a routerLink="/produits" class="nav-link" routerLinkActive="active">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>
-                   Produits
-                    
-                  </p>
-                </a>
-          </li>
-
-          <li class="nav-item">
-                <a routerLink="/rayons" class="nav-link" routerLinkActive="active">
-                  <i class="nav-icon fas fa-th"></i>
-                  <p>
-                  Rayons
-                    
-                  </p>
-                </a>
-          </li>
-
+      
           <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-wrench"></i>
+              <i class="nav-icon fas fa-plus"></i>
               <p>
-                Pharmacie settings
+                Pharmacie 
                 <i class="right fas fa-angle-left"></i>
                 
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a routerLink="/rayons" class="nav-link">
+                <a routerLink="/rayons" routerLinkActive="active" class="nav-link">
                   <i class="far fa-sitemap nav-icon"></i>
                   <p>Rayons</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a routerLink="/produits" class="nav-link">
+                <a routerLink="/produits" routerLinkActive="active" class="nav-link">
                   <i class="far fa-capsules nav-icon"></i>
                   <p>Produits</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a routerLink="/ventes" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-money-bill nav-icon"></i>
                   <p>Vente</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/ligneVentes" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ligne Vente</p>
+                <a routerLink="/acquisitions" class="nav-link">
+                  <i class="far fa-arrow-circle-right nav-icon"></i>
+                  <p>Acquisition</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/commandes" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Commandes</p>
+                <a routerLink="/besoins" class="nav-link">
+                  <i class="far fa-list-alt nav-icon"></i>
+                  <p>Besoins</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a routerLink="/commandesFournisseurs" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Commande Fournisseurs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="/ligneCommandes" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ligne Commandes</p>
-                </a>
-              </li>
+              
               <li class="nav-item">
                 <a routerLink="/fournisseurs" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-ambulance nav-icon"></i>
                   <p>Fournisseurs</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a routerLink="/adresses" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Adresses</p>
+                <a routerLink="/reporting" class="nav-link">
+                  <i class="far fa-chart-bar nav-icon"></i>
+                  <p>Reporting</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-clinic-medical"></i>
+              <p>
+                Clinique 
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/patients" class="nav-link">
+                  <i class="far fa-user-friends nav-icon"></i>
+                  <p>Patients</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="/Livraisons" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Livraisons</p>
+                <a routerLink="/rv" class="nav-link">
+                  <i class="far fa-calendar-alt nav-icon"></i>
+                  <p>Rendez-vous</p>
                 </a>
               </li>
+
               <li class="nav-item">
-                <a href="/ligneLivraisons" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Ligne Livraison</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a routerLink="/reserves" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Reserves</p>
+                <a routerLink="/reporting" class="nav-link">
+                  <i class="far fa-chart-bar nav-icon"></i>
+                  <p>Reporting</p>
                 </a>
               </li>
             </ul>
           </li>
+
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-cogs"></i>
+              <p>
+                Administration
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a routerLink="/patients" class="nav-link">
+                  <i class="far fa-user-friends nav-icon"></i>
+                  <p>Personnel</p>
+                </a>
+              </li>
+             
+            </ul>
+          </li>
+
 
 
           

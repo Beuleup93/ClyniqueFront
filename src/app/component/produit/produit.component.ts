@@ -40,7 +40,15 @@ export class ProduitComponent implements OnInit {
       console.log(data);
     });
   }
-
+  
+  save(produitForm:FormGroup){
+    this.produitService.saveProduit(this.produitForm.value).subscribe(data=>{
+      this.produit = data;
+      console.log(" save produit"+JSON.stringify(this.produit));
+      this.produits.push(data)
+    })
+    
+  }
   onEdit(produit:Produit){
     console.log(produit);
   }

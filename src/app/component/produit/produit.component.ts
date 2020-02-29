@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Produit } from 'src/app/entities/produit';
+import { ProduitService } from 'src/app/service/produit.service';
+import { Rayon } from 'src/app/entities/rayon';
 
 @Component({
   selector: 'app-produit',
@@ -6,10 +10,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./produit.component.css']
 })
 export class ProduitComponent implements OnInit {
-
-  constructor() { }
+  produitForm: FormGroup;
+  produit: Produit = new Produit();
+  produits: Produit[]=[];
+  rayons: Rayon[] = [];
+  constructor(private produitService: ProduitService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.produitForm = this.formBuilder.group({
+      refProduit: ["",Validators.required],
+      quantite: [],
+      prixUnitaire: [],
+      seuilAlerte: [],
+      seuilMax: [],
+      rayon: []
+    });
+    this.getProduits();
+    this.getRayons();
+  }
+  getProduits(){
+      this.produitService.listeProduit().subscribe(data => {
+      this.produits=data;
+      console.log(data);
+    });
+  }
+  getRayons(){
+    this.produitService.listeRayon().subscribe(data => {
+      this.rayons=data;
+      console.log(data);
+    });
+  }
+
+  onEdit(produit:Produit){
+    console.log(produit);
+  }
+
+  onDelete(produit:Produit){
+    console.log(produit)
   }
 
 }

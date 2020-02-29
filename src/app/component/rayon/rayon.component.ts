@@ -10,6 +10,7 @@ import { Rayon } from 'src/app/entities/rayon';
 })
 export class RayonComponent implements OnInit {
   rayonForm: FormGroup;
+  rayonEditForm:FormGroup;
   rayon: Rayon = new Rayon();
   rayons: Rayon[]=[];
   constructor(private produitService: ProduitService, private formBuilder: FormBuilder) { }
@@ -36,8 +37,9 @@ export class RayonComponent implements OnInit {
     
   }
   onEdit(rayon:Rayon){
-    console.log(rayon)
+    console.log(rayon);
   }
+
   onDelete(rayon:Rayon){
     console.log(rayon)
   }

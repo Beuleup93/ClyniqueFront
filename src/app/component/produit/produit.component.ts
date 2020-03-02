@@ -17,13 +17,15 @@ export class ProduitComponent implements OnInit {
   constructor(private produitService: ProduitService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    //formGroup Produit
     this.produitForm = this.formBuilder.group({
-      refProduit: ["",Validators.required],
-      quantite: [],
-      prixUnitaire: [],
-      seuilAlerte: [],
-      seuilMax: [],
-      rayon: []
+      refProduit: ['',Validators.required],
+      libelle: ['',Validators.required],
+      quantite: [''],
+      prixUnitaire: [''],
+      seuilAlerte: [''],
+      seuilMax: [''],
+      rayonId: ['',Validators.required]
     });
     this.getProduits();
     this.getRayons();

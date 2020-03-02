@@ -14,7 +14,7 @@ export class Produit {
     public seuilMax?: number;
     public codeBarre: string;
     public del: boolean=false;
-    public rayon: Rayon
+    public rayonId: number;
     public dateCreate: Date;
     public heureCreate: Time;
     public dateLastUpdate: Date;

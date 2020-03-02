@@ -62,7 +62,7 @@ export class ProduitService {
   }
   // DELETE
   deleteRayon(rayon: Rayon) {
-    return this.http.put<Rayon>(this.hostRayon + "delete/",JSON.stringify(rayon), this.httpOptions)
+    return this.http.delete<Rayon>(this.hostRayon + "delete/"+rayon.id, this.httpOptions)
       .pipe(retry(1), catchError(this.errorHandl));
   }
   // GET

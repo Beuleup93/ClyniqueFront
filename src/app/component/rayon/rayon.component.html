@@ -7,7 +7,7 @@
             </div>
           </div> -->
         </div><!-- /.container-fluid -->
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#modal-lg">
+        <button type="button" class="btn btn-success" (click)="modalSave()" data-toggle="modal" data-target="#modal-lg">
           Ajouter un rayon
         </button>
         <br/><br/>
@@ -26,11 +26,11 @@
                   </tr>
               </thead>
               <tbody>
-                  <tr *ngFor="let rayon of rayons">
+                  <tr *ngFor="let rayon of rayons; let index = index">
                     <td>{{rayon.libelle}}</td>
                     <td>{{rayon.description}}</td>
                     <td>
-                      <button class="btn btn-primary" (click)="onEdit(rayon)"><i class="fas fa-edit"></i></button>&nbsp;&nbsp;&nbsp;
+                      <button type="button" (click)="modalEdit(rayon)" class="btn btn-primary" data-toggle="modal" data-target="#modal-lg"><i class="fas fa-edit"></i></button>&nbsp;&nbsp;&nbsp;
                       <button class="btn btn-danger" (click)="onDelete(rayon)"><i class="fas fa-trash-alt"></i></button>
                     </td>
                   </tr>
@@ -52,7 +52,7 @@
               </button>
             </div>
             <div class="modal-body">
-              <form role="form" (submit)="save(rayonForm)" [formGroup]="rayonForm">
+              <form role="form" (submit)="saveOrUpdate(rayonForm)" [formGroup]="rayonForm">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="libelle">Libelle</label>
@@ -69,7 +69,8 @@
                 </div>-->
                 <div class="modal-footer justify-content-between">
                   <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                  <button type="submit" class="btn btn-success">Save</button>
+                  <button *ngIf="!isEdit" type="submit" class="btn btn-success">Save</button>
+                  <button *ngIf="isEdit" type="isEdit" class="btn btn-primary">Edit</button>
                 </div>
               </form>
             </div>
